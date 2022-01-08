@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Les Stats Billy, les Stats !</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction: row; height: 1080px; width: 1920px;"> 
+
+        <div style="display: flex; flex-direction: column;">
+
+            <div class="case" id="caractère" style="display: flex; flex-direction: column; text-align: center; font-weight: bold">
+                <div>Caractère</div>
+                <div contenteditable="true" style="background-color: lightblue;">...</div>
+            </div>
+
+            <div style="display: flex; flex-direction: row;">
+                <div style="display: flex; flex-direction: column;">
+
+                    <div style="display: flex; flex-direction: row;">
+                        <div class="case" style="display: flex; flex-direction: column;">
+                            <div style="text-align: center; font-weight: bold; border-bottom: 1px solid black;">Habillité</div>
+                            <div style="display: flex; flex-direction: row; border-bottom: 1px solid black;">
+                                <div class="scores" style="display: flex; flex-direction: column;">
+                                    <div style="display: flex; flex-direction: row; border-bottom: 1px solid black;">Base : 2</div>
+                                    <div style="display: flex; flex-direction: row; border-bottom: 1px solid black;">Carac. : <input type="text" id="HAB_carac" size="2"></div>
+                                    <div style="display: flex; flex-direction: row;">Matériel : <input type="text" id="HAB_mat" size="2"></div>
+                                </div>
+                                <div class="total" style="display: flex; flex-direction: column;"><div>Total</div><div id="HAB_total"></div></div>
+                            </div>
+                            <div class="case_inputs" id="HAB_boxes" style="margin-top: 15px;">+1
+                                <input type="checkbox" id="HAB1"><input type="checkbox" id="HAB2"><input type="checkbox" id="HAB3"><input type="checkbox" id="HAB4">
+                                <input type="checkbox" id="HAB5"><input type="checkbox" id="HAB6"><input type="checkbox" id="HAB7"><input type="checkbox" id="HAB8">
+                            </div>
+                        </div>
+
+                        <div class="case" style="display: flex; flex-direction: column;">
+                            <div style="text-align: center; font-weight: bold; border-bottom: 1px solid black;">Adresse</div>
+                            <div style="display: flex; flex-direction: row; border-bottom: 1px solid black;">
+                                <div class="scores" style="display: flex; flex-direction: column;">
+                                    <div style="display: flex; flex-direction: row; border-bottom: 1px solid black;">Base : 1</div>
+                                    <div style="display: flex; flex-direction: row; border-bottom: 1px solid black;">Carac. : <input type="text" id="ADR_carac" size="2"></div>
+                                    <div style="display: flex; flex-direction: row;">Matériel : <input type="text" id="ADR_mat" size="2"></div>
+                                </div>
+                                <div class="total" style="display: flex; flex-direction: column;"><div>Total</div><div id="ADR_total"></div></div>
+                            </div>
+                            <div style="font-style: italic; text-align: center; margin-top: 15px;">Ne peut pas dépasser 5</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: row;">
+                        <div class="case" style="display: flex; flex-direction: column;">
+                            <div style="text-align: center; font-weight: bold; border-bottom: 1px solid black;">Endurance</div>
+                            <div style="display: flex; flex-direction: row; border-bottom: 1px solid black;">
+                                <div class="scores" style="display: flex; flex-direction: column;">
+                                    <div style="display: flex; flex-direction: row; border-bottom: 1px solid black;">Base : 2</div>
+                                    <div style="display: flex; flex-direction: row; border-bottom: 1px solid black;">Carac. : <input type="text" id="END_carac" size="2"></div>
+                                    <div style="display: flex; flex-direction: row;">Matériel : <input type="text" id="END_mat" size="2"></div>
+                                </div>
+                                <div class="total" style="display: flex; flex-direction: column;"><div>Total</div><div id="END_total"></div></div>
+                            </div>
+                            <div class="case_inputs" style="margin-top: 15px;">+1
+                                <input type="checkbox" id="END1"><input type="checkbox" id="END2"><input type="checkbox" id="END3"><input type="checkbox" id="END4">
+                                <input type="checkbox" id="END5"><input type="checkbox" id="END6"><input type="checkbox" id="END7"><input type="checkbox" id="END8">
+                            </div>
+                        </div>
+                        
+                        <div class="case" style="display: flex; flex-direction: column;">
+                            <div style="text-align: center; font-weight: bold; border-bottom: 1px solid black;">Chance</div>
+                            <div style="display: flex; flex-direction: row; border-bottom: 1px solid black;">
+                                <div class="scores" style="display: flex; flex-direction: column;">
+                                    <div style="display: flex; flex-direction: row; border-bottom: 1px solid black;">Base : 3</div>
+                                    <div style="display: flex; flex-direction: row; border-bottom: 1px solid black;">Carac. : <input type="text" id="CHA_carac" size="2"></div>
+                                    <div style="display: flex; flex-direction: row;">Matériel : <input type="text" id="CHA_mat" size="2"></div>
+                                </div>
+                                <div class="total" style="display: flex; flex-direction: column;"><div>Total</div><div id="CHA_total"></div></div>
+                            </div>
+                            <div class="case_inputs" style="margin-top: 15px;">+1
+                                <input type="checkbox" id="CHA1"><input type="checkbox" id="CHA2"><input type="checkbox" id="CHA3"><input type="checkbox" id="CHA4">
+                                <input type="checkbox" id="CHA5"><input type="checkbox" id="CHA6"><input type="checkbox" id="CHA7"><input type="checkbox" id="CHA8">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: row;">
+                        <div class="case" style="display: flex; flex-direction: column; text-align: center;">
+                            <div style="text-align: center; margin: 0; border-bottom: 1px solid black; font-weight: bold;">Matériel</div>
+                            <div style="margin-top: 10px;">- <input type="text" id="mat1"></div>
+                            <div style="margin-top: 10px;">- <input type="text" id="mat2"></div>
+                            <div style="margin-top: 10px;">- <input type="text" id="mat3"></div>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <div class="case" id="subcase" style="display: flex; flex-direction: column;">
+                                <div style="text-align: center; font-weight: bold; border-bottom: 1px solid black;">Gloire</div>
+                                <div class="gloire" id="gloire" style="margin-top: 10px;">
+                                    <input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox">
+                                    <input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox">
+                                </div>
+                            </div>
+                            
+                            <div class="case" id="subcase" style="display: flex; flex-direction: column;">
+                                <div style="text-align: center; font-weight: bold; border-bottom: 1px solid black;">Richesse</div>
+                                <div class="gloire" id="richesse" style="margin-top: 10px;">
+                                    <input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox">
+                                    <input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: row;">
+                        <div class="case" style="display: flex; flex-direction: column;">
+                            <div style="font-weight: bold; text-align: center; margin: 0px; border-bottom: 1px solid black;">Suivi des points de vie</div>
+                            <div style="display:flex; flex-direction: row; margin-top: 35px;">
+                                <input id="PV_courant" type="text" style="font-size: 24px; text-align: center; font-weight: bold; color: red; margin-left: 5px;" size="6">
+                                <div style="font-size: 24px; color: red; margin-left: 10px; margin-right: 10px;">/</div>
+                                <div id="PVMAX" style="font-size: 32px; color: red; font-weight: bold;"></div>
+                            </div>
+                        </div>
+                        <div class="case" style="display: flex; flex-direction: column;">
+                            <div style="font-weight: bold; text-align: center; margin: 0px; border-bottom: 1px solid black;">Suivi des points de chance</div>
+                            <div style="display:flex; flex-direction: row; margin-top: 35px;">
+                                <input id="CHA_courant" type="text" style="font-size: 24px; text-align: center; font-weight: bold; color: blue; margin-left: 5px;" size="6">
+                                <div style="font-size: 24px; color: blue; margin-left: 10px; margin-right: 10px;">/</div>
+                                <div id="CHAMAX" style="font-size: 32px; color: blue; font-weight: bold;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case" id="objets" style="display: flex; flex-direction: column;">
+                        <div style="text-align: center; border-bottom: 1px solid black; font-weight: bold;">Objets récupérés</div>
+                        <div style="display: flex; flex-direction: row;"><input id="obj1" type="text" style="margin-left: 90px;"><input id="obj2" type="text"></div>
+                        <div style="display: flex; flex-direction: row;"><input id="obj3" type="text" style="margin-left: 90px;"><input id="obj4" type="text"></div>
+                        <div style="display: flex; flex-direction: row;"><input id="obj5" type="text" style="margin-left: 90px;"><input id="obj6" type="text"></div>
+                        <div style="display: flex; flex-direction: row;"><input id="obj7" type="text" style="margin-left: 90px;"><input id="obj8" type="text"></div>
+                        <div style="display: flex; flex-direction: row;"><input id="obj9" type="text" style="margin-left: 90px;"><input id="obj10" type="text"></div>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column">
+                    <div class="case" style="display:flex; flex-direction:column; height: 288px;">
+                        <div style="text-align: center; font-weight: bold;">Stats secondaires</div>
+                        <div style="display: flex; flex-direction: row; border-bottom: 1px solid black; margin-top: 10px; padding-left: 5px;"><div>Dégâts :</div><input id="dégâts" type="text" size="10" style="margin-left: 10px"></div>
+                        <div style="display: flex; flex-direction: row; border-bottom: 1px solid black; margin-top: 10px; padding-left: 5px;"><div>Armure :</div><input id="armure" type="text" size="10" style="margin-left: 10px"></div>
+                        <div style="display: flex; flex-direction: row; border-bottom: 1px solid black; margin-top: 10px; padding-left: 5px;"><div>Critique :</div><input id="critique" type="text" size="10" style="margin-left: 10px"></div>
+                        <div style="margin-top: 10px; padding-left: 5px;">PV Max.</div>
+                        <div style="display: flex; flex-direction: row;">
+                            <div style="margin-left: 5px;">+1</div>
+                            <div id="PVMAX_boxes" style="display: flex; flex-direction: column; margin-left: 5px;">
+                                <div style="display:flex; flex-direction: row;"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></div>
+                                <div style="display:flex; flex-direction: row;"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></div>
+                                <div style="display:flex; flex-direction: row;"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case" style="display: flex; flex-direction: column; height: 456px;">
+                        <div style="text-align: center; font-weight: bold; margin: 0px;">Notes d'aventure</div>
+                        <textarea rows="27" columns="50" id="notes"></textarea>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="combats" style="display:flex; flex-direction:column;">
+                <table style="text-align: center; font-weight: bold; border-collapse: collapse;">
+                    <tr>
+                        <td style="background-color: black; color:white; width: 300px;"></td>
+                        <td colspan="3" style="background-color: brown;">Désavantage lourd</td>
+                        <td colspan="2" style="background-color: rgb(221, 122, 40);">Désavantage</td>
+                        <td colspan="2" style="background-color: rgb(253, 186, 131);">Désavantge léger</td>
+                        <td style="background-color: rgb(252, 230, 212);">Egalité</td>
+                        <td colspan="2" style="background-color: rgb(253, 186, 131);">Avantage léger</td>
+                        <td colspan="2" style="background-color: rgb(221, 122, 40);">Avantage</td>
+                        <td colspan="3" style="background-color: brown;">Avantage lourd</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: black; color:white;">Coûts de fuite en CHANCE</td>
+                        <td colspan="3" style="background-color: brown;">5</td>
+                        <td colspan="2" style="background-color: rgb(221, 122, 40);">3</td>
+                        <td colspan="2" style="background-color: rgb(253, 186, 131);">1</td>
+                        <td style="background-color: rgb(252, 230, 212);">1</td>
+                        <td colspan="2" style="background-color: rgb(253, 186, 131);">1</td>
+                        <td colspan="2" style="background-color: rgb(221, 122, 40);">1</td>
+                        <td colspan="3" style="background-color: brown;">0</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: black; color:white;">Différence d'HABILITE</td>
+                        <td style="background-color: brown;">-7</td>
+                        <td style="background-color: brown;">-6</td>
+                        <td style="background-color: brown;">-5</td>
+                        <td style="background-color: rgb(221, 122, 40);">-4</td>
+                        <td style="background-color: rgb(221, 122, 40);">-3</td>
+                        <td style="background-color: rgb(253, 186, 131);">-2</td>
+                        <td style="background-color: rgb(253, 186, 131);">-1</td>
+                        <td style="background-color: rgb(252, 230, 212);">0</td>
+                        <td style="background-color: rgb(253, 186, 131);">1</td>
+                        <td style="background-color: rgb(253, 186, 131);">2</td>
+                        <td style="background-color: rgb(221, 122, 40);">3</td>
+                        <td style="background-color: rgb(221, 122, 40);">4</td>
+                        <td style="background-color: brown;">5</td>
+                        <td style="background-color: brown;">6</td>
+                        <td style="background-color: brown;">7</td>
+                    </tr>
+                    <tr class="table_score">
+                        <td>1</td>
+                        <td>0-12</td>
+                        <td>1-8</td>
+                        <td>1-7</td>
+                        <td>1-6</td>
+                        <td>2-6</td>
+                        <td>2-6</td>
+                        <td>3-6</td>
+                        <td>3-5</td>
+                        <td>3-5</td>
+                        <td>3-5</td>
+                        <td>3-4</td>
+                        <td>3-4</td>
+                        <td>4-4</td>
+                        <td>4-3</td>
+                        <td>4-3</td>
+                    </tr>
+                    <tr class="table_score">
+                        <td>2</td>
+                        <td>0-9</td>
+                        <td>1-7</td>
+                        <td>1-6</td>
+                        <td>2-6</td>
+                        <td>2-5</td>
+                        <td>2-5</td>
+                        <td>3-5</td>
+                        <td>3-4</td>
+                        <td>3-4</td>
+                        <td>3-4</td>
+                        <td>3-3</td>
+                        <td>3-3</td>
+                        <td>4-3</td>
+                        <td>5-2</td>
+                        <td>5-2</td>
+                    </tr>
+                    <tr class="table_score">
+                        <td>3</td>
+                        <td>1-8</td>
+                        <td>1-6</td>
+                        <td>1-5</td>
+                        <td>2-5</td>
+                        <td>2-4</td>
+                        <td>2-4</td>
+                        <td>3-4</td>
+                        <td>3-3</td>
+                        <td>3-3</td>
+                        <td>3-3</td>
+                        <td>4-3</td>
+                        <td>4-2</td>
+                        <td>5-2</td>
+                        <td>5-2</td>
+                        <td>6-2</td>
+                    </tr>
+                    <tr class="table_score">
+                        <td>4</td>
+                        <td>2-6</td>
+                        <td>2-5</td>
+                        <td>2-5</td>
+                        <td>2-4</td>
+                        <td>3-4</td>
+                        <td>3-3</td>
+                        <td>3-3</td>
+                        <td>4-3</td>
+                        <td>4-2</td>
+                        <td>4-2</td>
+                        <td>4-2</td>
+                        <td>5-2</td>
+                        <td>5-1</td>
+                        <td>6-1</td>
+                        <td>8-1</td>
+                    </tr>
+                    <tr class="table_score">
+                        <td>5</td>
+                        <td>2-5</td>
+                        <td>2-5</td>
+                        <td>3-4</td>
+                        <td>3-3</td>
+                        <td>3-3</td>
+                        <td>4-3</td>
+                        <td>4-3</td>
+                        <td>5-3</td>
+                        <td>5-2</td>
+                        <td>5-2</td>
+                        <td>5-2</td>
+                        <td>6-2</td>
+                        <td>6-1</td>
+                        <td>7-1</td>
+                        <td>9-0</td>
+                    </tr>
+                    <tr class="table_score">
+                        <td>6</td>
+                        <td>3-4</td>
+                        <td>3-4</td>
+                        <td>4-4</td>
+                        <td>4-3</td>
+                        <td>4-3</td>
+                        <td>5-3</td>
+                        <td>5-3</td>
+                        <td>6-3</td>
+                        <td>6-2</td>
+                        <td>6-2</td>
+                        <td>6-2</td>
+                        <td>6-1</td>
+                        <td>7-1</td>
+                        <td>8-1</td>
+                        <td>12-0</td>
+                    </tr>
+                </table>
+            <div style="display:flex; flex-direction: row;">
+
+                <div id="dés" style="display: flex; flex-direction: column;">
+                    <div id="Dice">5</div>
+                    <button class="btn_dés" onclick="diceThrow()">Lancer !</button>
+                </div>
+
+                <div id="suivi_combat" style="display:flex; flex-direction:column; margin-left: 20px;">
+                    <div style="text-align: center; font-weight: bold; border-bottom: 1px solid black; padding-bottom: 5px;">Situation</div>
+                    <div style="display:flex; flex-direction:row; margin-bottom: 5px; margin-top: 5px;">
+                        <button class="btn_line" onclick="newLine()">+</button>
+                        <div style="padding-left: 5px;">Rajouter une ligne de suivi.</div>
+                    </div>
+                    <div style="display:flex; flex-direction:row; margin-bottom: 5px; margin-top: 5px;">
+                        <button class="btn_line" onclick="clearTable()">X</button>
+                        <div style="padding-left: 5px;">Effacer le tableau.</div>
+                    </div>
+                    <div style="display:flex; flex-direction:row">
+                        <div style="text-align: left; border: 1px solid black; border-left: 0px; padding-right: 50px;">PV</div>
+                        <div style="text-align: center; border: 1px solid black; padding-left: 20px; padding-right: 20px;">Billy</div>
+                        <div style="text-align: center; border: 1px solid black; border-right: 0px; padding-left: 20px; padding-right: 20px;">Adv.</div>
+                    </div>
+                    <div class="combat_line"><div id="cl_1">Tour 1</div><input id="cl_2" type="text" size="5"><input id="cl_3" type="text" size="5"></div>
+                    <div class="combat_line"><div id="cl_1">Tour 2</div><input id="cl_2" type="text" size="5"><input id="cl_3" type="text" size="5"></div>
+                    <div class="combat_line"><div id="cl_1">Tour 3</div><input id="cl_2" type="text" size="5"><input id="cl_3" type="text" size="5"></div>
+                    <div class="combat_line"><div id="cl_1">Tour 4</div><input id="cl_2" type="text" size="5"><input id="cl_3" type="text" size="5"></div>
+                    <div class="combat_line"><div id="cl_1">Tour 5</div><input id="cl_2" type="text" size="5"><input id="cl_3" type="text" size="5"></div>
+                    <div class="combat_line"><div id="cl_1">Tour 6</div><input id="cl_2" type="text" size="5"><input id="cl_3" type="text" size="5"></div>
+                    <div class="combat_line"><div id="cl_1">Tour 7</div><input id="cl_2" type="text" size="5"><input id="cl_3" type="text" size="5"></div>
+                    <div class="combat_line"><div id="cl_1">Tour 8</div><input id="cl_2" type="text" size="5"><input id="cl_3" type="text" size="5"></div>
+                    <div class="combat_line"><div id="cl_1">Tour 9</div><input id="cl_2" type="text" size="5"><input id="cl_3" type="text" size="5"></div>
+                    <div class="combat_line"><div id="cl_1">Tour 10</div><input id="cl_2" type="text" size="5"><input id="cl_3" type="text" size="5"></div>
+                </div>
+                
+                <div id="suivi_situation" style="display:flex; flex-direction:column; margin-left: 20px;">
+                    <div style="display:flex; flex-direction: row;">
+                        <div>Ton niveau d'HAB</div>
+                        <div style="margin-left: 5px; margin-right: 5px;">-</div>
+                        <div>Celle de l'Adv.</div>
+                        <div style="margin-left: 5px; margin-right: 5px;">=</div>
+                        <div>Ta Situation</div>
+                    </div>
+                    <div style="display:flex; flex-direction: row;">
+                        <input type="text" size="5" id="SIT_1">
+                        <div style="margin-left: 5px; margin-right: 5px;">-</div>
+                        <input type="text" size="5" id="SIT_2">
+                        <div style="margin-left: 5px; margin-right: 5px;">=</div>
+                        <div id="SIT_3"></div>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">Zone de sauvegarde.</div>
+                    <div style="display: flex; flex-direction:row; margin-top: 5px; margin-bottom: 5px;">
+                        <button type="button" onclick="saveCharacter()" style="margin-right: 5px;">Sauvegarder</button>
+                        <button type="button" onclick="loadCharacter()" style="margin-right: 5px;">Charger</button>
+                        <button type="button" onclick="clearSave()" style="margin-right: 5px;">Effacer</button>
+                        <div id="save_spec"></div>
+                    </div>
+                    <textarea id="sauvegarde" cols="50" rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    #caractère{
+        width: 765px;
+        height: 50px;
+    }
+    .case {
+        border: 2px solid black;
+        width: 250px;
+        height: 140px;
+        margin: 2px;
+    }
+    .case .scores{
+        border-right: 1px solid black;
+    }
+    .case .scores div{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .case .total{
+        text-align: center;
+        margin-left: 40px;
+    }
+    .case_inputs{
+        text-align: center;
+    }
+    #HAB_total, #ADR_total, #END_total, #CHA_total {
+        font-size: 36px;
+        font-weight: bold;
+    }
+    #subcase{
+        height: 66px;
+    }
+    .gloire{
+        text-align: center;
+    }
+    .gloire input{
+        width: 9px;
+    }
+    #objets{
+        width: 508px;
+        height: 160px;
+    }
+    #objets input{
+        margin-left: 35px;
+        margin-top: 5px;
+    }
+    #dés{
+        border: 2px solid red;
+        width: 120px;
+        height: 120px;
+    }
+    #Dice{
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+    }
+    #dés button{
+        margin-top: 10px;
+    }
+    .combat_line{
+        display: flex;
+        flex-direction: row;
+    }
+    #cl_1{
+        text-align: left;
+        width: 80px;
+    }
+    #cl_2, #cl_3{
+        text-align: center;
+    }
+    #cl_3{
+        margin-left: 10px;
+    }
+    table, tr, td{
+        border: 1px solid black;
+    }
+    .table_score td:not(:first-child){
+        width: 80px;
+    }
+</style>
+<script>
+    var HAB_carac;
+    var HAB_mat;
+    var HAB_boxes;
+
+    var ADR_carac;
+    var ADR_mat;
+
+    var END_carac;
+    var END_mat;
+    var END_boxes;
+
+    var CHA_carac;
+    var CHA_mat;
+    var CHA_boxes;
+
+    var mat1;
+    var mat2;
+    var mat3;
+
+    var gloire;
+    var richesse;
+
+    var PV;
+    var CHA;
+
+    var obj1;
+    var obj2;
+    var obj3;
+    var obj4;
+    var obj5;
+    var obj6;
+    var obj7;
+    var obj8;
+    var obj9;
+    var obj10;
+
+    var dégâts;
+    var armure;
+    var critique;
+    var PVMAX_boxes;
+
+    var notes;
+
+    var save;
+    var saveJSON;
+
+    var SIT_1;
+    var SIT_2;
+    var SIT_3;
+
+    function getData(){
+        // récupération des stats perso    
+
+        HAB_carac = document.getElementById("HAB_carac");
+        if (HAB_carac.value == "") HAB_carac = 0;
+        else                       HAB_carac = parseInt(HAB_carac.value);
+
+        HAB_mat = document.getElementById("HAB_mat");
+        if (HAB_mat.value == "") HAB_mat = 0;
+        else                     HAB_mat = parseInt(HAB_mat.value);
+
+        HAB_boxes = 0;
+        for(var i=1; i<=8; i++){
+            var box = document.getElementById("HAB"+i);
+            if(box.checked) HAB_boxes++;
+        }
+
+        ADR_carac = document.getElementById("ADR_carac");
+        if (ADR_carac.value == "") ADR_carac = 0;
+        else                       ADR_carac = parseInt(ADR_carac.value);
+
+        ADR_mat = document.getElementById("ADR_mat");
+        if (ADR_mat.value == "") ADR_mat = 0;
+        else                     ADR_mat = parseInt(ADR_mat.value);
+
+        END_carac = document.getElementById("END_carac");
+        if (END_carac.value == "") END_carac = 0;
+        else                       END_carac = parseInt(END_carac.value);
+
+        END_mat = document.getElementById("END_mat");
+        if (END_mat.value == "") END_mat = 0;
+        else                     END_mat = parseInt(END_mat.value);
+
+        END_boxes = 0;
+        for(var i=1; i<=8; i++){
+            var box = document.getElementById("END"+i);
+            if(box.checked) END_boxes++;
+        }
+
+        CHA_carac = document.getElementById("CHA_carac");
+        if (CHA_carac.value == "") CHA_carac = 0;
+        else                       CHA_carac = parseInt(CHA_carac.value);
+
+        CHA_mat = document.getElementById("CHA_mat");
+        if (CHA_mat.value == "") CHA_mat = 0;
+        else                     CHA_mat = parseInt(CHA_mat.value);
+
+        CHA_boxes = 0;
+        for(var i=1; i<=8; i++){
+            var box = document.getElementById("CHA"+i);
+            if(box.checked) CHA_boxes++;
+        }
+
+        mat1 = document.getElementById("mat1").value;
+        mat2 = document.getElementById("mat2").value;
+        mat3 = document.getElementById("mat3").value;
+
+        gloire = 0;
+        var gloire_boxes = document.getElementById("gloire").children;
+        for(var i=0; i<gloire_boxes.length; i++){
+            if(gloire_boxes[i].checked){
+                gloire++;
+            }
+        }
+
+        richesse = 0;
+        var richesse_boxes = document.getElementById("richesse").children;
+        for(var i=0; i<richesse_boxes.length; i++){
+            if(richesse_boxes[i].checked){
+                richesse++;
+            }
+        }
+
+        PV = document.getElementById("PV_courant").value;
+        CHA = document.getElementById("CHA_courant").value;
+        
+        obj1 = document.getElementById("obj1").value;
+        obj2 = document.getElementById("obj2").value;
+        obj3 = document.getElementById("obj3").value;
+        obj4 = document.getElementById("obj4").value;
+        obj5 = document.getElementById("obj5").value;
+        obj6 = document.getElementById("obj6").value;
+        obj7 = document.getElementById("obj7").value;
+        obj8 = document.getElementById("obj8").value;
+        obj9 = document.getElementById("obj9").value;
+        obj10 = document.getElementById("obj10").value;
+
+        dégâts = document.getElementById("dégâts").value;
+        armure = document.getElementById("armure").value;
+        critique = document.getElementById("critique").value;
+
+        notes = document.getElementById("notes").value;
+
+        //récup boxes PVMax
+        PVMAX_boxes = 0;
+        var PVMAX = document.getElementById("PVMAX_boxes");
+        for(var i=0; i<PVMAX.children.length; i++){
+            for(var j=0; j<PVMAX.children[i].children.length; j++){
+                if(PVMAX.children[i].children[j].checked){
+                    PVMAX_boxes++;
+                }
+            }
+        }
+
+        //calcul de situation
+        SIT_1 = document.getElementById("SIT_1").value;
+        SIT_2 = document.getElementById("SIT_2").value;
+        SIT_3 = document.getElementById("SIT_3").innerHTML;
+
+    }
+
+    function putData(){
+        document.getElementById("HAB_carac").value = HAB_carac;
+        document.getElementById("HAB_mat").value = HAB_mat;
+        for(var i=1; i<=8; i++){
+            document.getElementById("HAB"+i).checked = false;
+        }
+        for(var i=1; i<=8; i++){
+            if(HAB_boxes >= i ){ 
+                document.getElementById("HAB"+i).checked = true;
+            }
+        }
+        var HAB_total = document.getElementById("HAB_total");
+        HAB_total.innerHTML = (HAB_carac + HAB_mat + HAB_boxes + 2);
+
+        document.getElementById("ADR_carac").value = ADR_carac;
+        document.getElementById("ADR_mat").value = ADR_mat;
+        var ADR_total = document.getElementById("ADR_total");
+        ADR_total.innerHTML = (ADR_carac + ADR_mat + 1);
+
+        document.getElementById("END_carac").value = END_carac;
+        document.getElementById("END_mat").value = END_mat;
+        for(var i=1; i<=8; i++){
+            document.getElementById("END"+i).checked = false;
+        }
+        for(var i=1; i<=8; i++){
+            if(END_boxes >= i ){ 
+                document.getElementById("END"+i).checked = true;
+            }
+        }
+        var END_total = document.getElementById("END_total");
+        END_total.innerHTML = (END_carac + END_mat + END_boxes + 2);
+
+        document.getElementById("CHA_carac").value = CHA_carac;
+        document.getElementById("CHA_mat").value = CHA_mat;
+        for(var i=1; i<=8; i++){
+            document.getElementById("CHA"+i).checked = false;
+        }
+        for(var i=1; i<=8; i++){
+            if(CHA_boxes >= i ){ 
+                document.getElementById("CHA"+i).checked = true;
+            }
+        }
+        var CHA_total = document.getElementById("CHA_total");
+        CHA_total.innerHTML = (CHA_carac + CHA_mat + CHA_boxes + 3);
+
+        document.getElementById("mat1").value = mat1;
+        document.getElementById("mat2").value = mat2;
+        document.getElementById("mat3").value = mat3;
+
+        var gloire_boxes = document.getElementById("gloire").children;
+        for(var i=1; i<=10; i++){
+            gloire_boxes[i].checked = false;
+        }
+        for(var i=1; i<=10; i++){
+            if(gloire > i){
+                gloire_boxes[i].checked = true;
+            }
+        }
+
+        var richesse_boxes = document.getElementById("richesse").children;
+        for(var i=1; i<=10; i++){
+            richesse_boxes[i].checked = false;
+        }
+        for(var i=1; i<=10; i++){
+            if(richesse > i){
+                richesse_boxes[i].checked = true;
+            }
+        }
+
+        document.getElementById("PV_courant").value = PV;
+        document.getElementById("CHA_courant").value = CHA;
+
+        document.getElementById("PVMAX").innerHTML = (END_carac + END_mat + END_boxes + 2) * 3 + PVMAX_boxes;
+        document.getElementById("CHAMAX").innerHTML = (CHA_carac + CHA_mat + CHA_boxes + 3);
+
+        document.getElementById("obj1").value = obj1;
+        document.getElementById("obj2").value = obj2;
+        document.getElementById("obj3").value = obj3;
+        document.getElementById("obj4").value = obj4;
+        document.getElementById("obj5").value = obj5;
+        document.getElementById("obj6").value = obj6;
+        document.getElementById("obj7").value = obj7;
+        document.getElementById("obj8").value = obj8;
+        document.getElementById("obj9").value = obj9;
+        document.getElementById("obj10").value = obj10;
+
+        document.getElementById("dégâts").value = dégâts;
+        document.getElementById("armure").value = armure;
+        document.getElementById("critique").value = critique;
+
+        document.getElementById("notes").value = notes;
+
+        var PVMAX = document.getElementById("PVMAX_boxes");
+        for(var i=0; i<3; i++){
+            for(var j=0; j<8; j++){
+                if(PVMAX_boxes - (8*i + j) > 0){
+                    PVMAX.children[i].children[j].checked = true;
+                }
+                else{
+                    PVMAX.children[i].children[j].checked = false;
+                }
+            }
+        }
+
+        //pour le suivi de combat HABILITE
+        document.getElementById("SIT_1").value = SIT_1;
+        document.getElementById("SIT_2").value = SIT_2;
+        if(SIT_1 != "" && SIT_2 != ""){
+            SIT_3 = parseInt(SIT_1) - parseInt(SIT_2);
+            document.getElementById("SIT_3").innerHTML = SIT_3;
+
+        }
+    }
+
+    function diceThrow(){
+        var newDice = Math.floor(6*Math.random()+1);
+        var Dice = document.getElementById("Dice");
+        Dice.innerHTML = newDice;
+    }
+
+    function newLine(){
+
+        //sauvegarde des éléments écrits dans les cass précédentes
+        var saveLines = [];
+        var nbLines = document.getElementsByClassName("combat_line");
+        for(var i=0; i<nbLines.length; i++){
+            var cl_1 = nbLines[i].children[1].value;
+            var cl_2 = nbLines[i].children[2].value;
+            saveLines.push([cl_1, cl_2]);
+        }
+
+        //rajout d'une ligne
+        var lastLine = document.getElementsByClassName("combat_line");
+        lastLine = lastLine[lastLine.length-1];
+        lastLine = lastLine.children;
+        lastLine = lastLine[0].innerHTML.split(' ')[1];
+        lastLine = parseInt(lastLine);
+
+        var newLine = '<div class="combat_line"><div id="cl_1">Tour '+ (lastLine + 1).toString() + '</div><input id="cl_2" type="text" size="5"><input id="cl_3" type="text" size="5"></div>';
+        document.getElementById("suivi_combat").innerHTML += newLine;
+
+        //écriture des lignes sauvegardées
+        nblines = document.getElementsByClassName("combat_line");
+        for(var i=0; i<saveLines.length; i++){
+            nbLines[i].children[1].value = saveLines[i][0];
+            nbLines[i].children[2].value = saveLines[i][1];
+        }
+    }
+
+    function clearTable(){
+
+        //on enlève les lignes qui ont été rajoutées
+        var lastLine = document.getElementsByClassName("combat_line");
+        lastLine = lastLine[lastLine.length-1];
+        lastLine_num = lastLine.children;
+        lastLine_num = lastLine_num[0].innerHTML.split(' ')[1];
+        lastLine_num = parseInt(lastLine_num);
+
+        for(var i=0; i<lastLine_num-10; i++){
+            lastLine = document.getElementsByClassName("combat_line");
+            lastLine = lastLine[lastLine.length-1]
+            lastLine.remove();
+        }
+
+        //on enlève les textes écrits
+        var nbLines = document.getElementsByClassName("combat_line");
+        for(var i=0; i<nbLines.length; i++){
+            nbLines[i].children[1].value = "";
+            nbLines[i].children[2].value = "";
+        }
+
+    }
+
+    function saveCharacter(){
+
+        getData();
+
+        //sauvegarde
+        save = new Object();
+        save.HAB_carac = HAB_carac;
+        save.HAB_mat = HAB_mat;
+        save.HAB_boxes = HAB_boxes;
+        save.ADR_carac = ADR_carac;
+        save.ADR_mat = ADR_mat;
+        save.END_carac = END_carac;
+        save.END_mat = END_mat;
+        save.END_boxes = END_boxes;
+        save.CHA_carac = CHA_carac;
+        save.CHA_mat = CHA_mat;
+        save.CHA_boxes = CHA_boxes;
+        save.mat1 = mat1;
+        save.mat2 = mat2;
+        save.mat3 = mat3;
+        save.gloire = gloire;
+        save.richesse = richesse;
+        save.PV = PV;
+        save.CHA = CHA;
+        save.obj1 = obj1;
+        save.obj2 = obj2;
+        save.obj3 = obj3;
+        save.obj4 = obj4;
+        save.obj5 = obj5;
+        save.obj6 = obj6;
+        save.obj7 = obj7;
+        save.obj8 = obj8;
+        save.obj9 = obj9;
+        save.obj10 = obj10;
+        save.dégâts = dégâts;
+        save.armure = armure;
+        save.critique = critique;
+        save.notes = notes;
+        save.PVMAX_boxes = PVMAX_boxes;
+
+        saveJSON = JSON.stringify(save);
+
+        delete save;
+
+        document.getElementById("sauvegarde").value = saveJSON;
+        document.getElementById("sauvegarde").select();
+        document.execCommand('copy');
+
+        document.getElementById("save_spec").innerHTML = "Code copié !"
+    }
+
+    function loadCharacter(){
+        var saveJSON = document.getElementById("sauvegarde").value;
+        save = JSON.parse(saveJSON);
+
+        HAB_carac = save.HAB_carac;
+        HAB_mat = save.HAB_mat;
+        HAB_boxes = save.HAB_boxes;
+        ADR_carac = save.ADR_carac;
+        ADR_mat = save.ADR_mat;
+        END_carac = save.END_carac;
+        END_mat = save.END_mat;
+        END_boxes = save.END_boxes;
+        CHA_carac = save.CHA_carac;
+        CHA_mat = save.CHA_mat;
+        CHA_boxes = save.CHA_boxes;
+        mat1 = save.mat1;
+        mat2 = save.mat2;
+        mat3 = save.mat3;
+        gloire = save.gloire;
+        richesse = save.richesse;
+        PV = save.PV;
+        CHA = save.CHA;
+        obj1 = save.obj1;
+        obj2 = save.obj2;
+        obj3 = save.obj3;
+        obj4 = save.obj4;
+        obj5 = save.obj5;
+        obj6 = save.obj6;
+        obj7 = save.obj7;
+        obj8 = save.obj8;
+        obj9 = save.obj9;
+        obj10 = save.obj10;
+        dégâts = save.dégâts;
+        armure = save.armure;
+        critique = save.critique;
+        notes = save.notes;
+        PVMAX_boxes = save.PVMAX_boxes;
+
+        putData();
+
+        document.getElementById("save_spec").innerHTML = "Sauvegarde chargée!"
+    }
+
+    function clearSave(){
+        document.getElementById("sauvegarde").value = "";
+        document.getElementById("save_spec").innerHTML = "";
+    }
+
+    setInterval(maj, 100);
+    function maj(){
+        getData();
+        putData();
+    }
+    //maj();
+</script>
+</html>
