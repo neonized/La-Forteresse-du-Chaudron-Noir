@@ -1,0 +1,16 @@
+COMMENT CA MARCHE ?
+/------------------------------------
+
+Utlisez cette fiche pour garder votre fiche de personnage à jour ! 
+Certaines zones sont mises à jour automatiquement suivant ce que vous rentrez comme caractéristiques, mais 
+la plupart des actions doivent être faites à la main.
+
+Il existe aussi une zone de sauvegarde, utilisez le bouton "Sauvegarder" pour la mettre à jour. Les éléments de votre fiche sont copiés automatiquement, collez-les dans un bloc notes pour les enregistrer localement.
+
+Après avoir collé votre sauvegarde dans la zone adéquate, vous pouvez appuyez sur "Charger" pour charger les caractéristiques de votre personnage.
+Attention la sauvegarde ne conceerne qu la fiche de personnage, pas le suivi de combat.
+
+En espérant que cette fiche vous soit utile.
+
+
+/------------------------------------
